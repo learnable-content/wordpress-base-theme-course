@@ -1,19 +1,23 @@
-# What is WordPress Theming
+# WordPress Template Structure
 
-WordPress powers 27% of the web today. It powers small business sites, huge blogs and online stores. With that many sites powering the web it makes you wonder what are this sites made up. More importantly how can I make this site look more like my brand?
+The WordPress template structure is pretty straight forward. If I would I have to break it up I would do so into 5 different sections.
 
-## The theme folder
+## The header
 
-So inside a WordPress install you will see a lot of files that come included. At first this can seem intimidating but don't worry we will go through it all.
+The header is the top region of your site which maps directly to the top piece of your code. WordPress gives a function call for this which we will go over later. Inside the header you have the doctype, header tags, styles and some other function calls
 
-## Creating your own theme
+## The navigation
 
-So creating your own theme means that you would have a folder inside the themes folder that is yours or pertains to your project. When setup correctly this folder will then read into your WordPress admin area with no additional database setup.
+This call for the navigation can also either live in the header section and/or the main section area. This would just depend on how your theme is structured. It does not warrant it's own file but sometimes it is nicer to keep it separate.
 
-## Extracting the theme
+## The main section
 
-You would normally have a full look to your site that would have a top section, content section, maybe a sidebar and a footer area. You can break apart these sections into smaller files and then make sure you include them for the final output of your theme.
+The main section is what I would call the meat of the site. The area where the actual content shows through. Because WordPress offers different types of files this section can live in several different files.
 
-## Theme Functions
+## The sidebar
 
-Inside these theme sections we will have functions that we call for various needs. For example we will have a function call that will query for the content that is inside that particular page. Or maybe we will have a function call that call the navigation of the site. Either way we have a ton of functions at our disposal.
+The sidebar is, well you guessed, the sidebar. This file can sit on either the left side of the site and/or the right side of the site. Not all templates require this file but it is one of the main files for the template structure.
+
+## The footer
+
+Last but not least every template could have a footer that will sit at the bottom of the site and carry any additional information needed for your site.
