@@ -1,23 +1,48 @@
-# WordPress Template Structure
+# Theme File Structure
 
-The WordPress template structure is pretty straight forward. If I would I have to break it up I would do so into 5 different sections.
+It is very important to understand the template folder structure of WordPress so you know which files you need to interact with.
 
-## The header
+The following link gives us a list reference of the available template files that we can use. This is not by all means the only files we can use but they are the core to what the template directory gives us. [Theme Development](https://codex.wordpress.org/Theme_Development)
 
-The header is the top region of your site which maps directly to the top piece of your code. WordPress gives a function call for this which we will go over later. Inside the header you have the doctype, header tags, styles and some other function calls
+## List of main files
 
-## The navigation
+- style.css
+- rtl.css
+- index.php
+- comments.php
+- front-page.php
+- home.php
+- single.php
+- single-{post-type}.php
+- page.php
+- category.php
+- tag.php
+- taxonomy.php
+- author.php
+- date.php
+- archive.php
+- search.php
+- attachment.php
+- image.php
+- 404.php
 
-This call for the navigation can also either live in the header section and/or the main section area. This would just depend on how your theme is structured. It does not warrant it's own file but sometimes it is nicer to keep it separate.
+## Additional files
 
-## The main section
+The additional files that you see in the included twentyseventeen are extra folders to help with the structure and organization. This part of theming is left up to you how you would like to organize.
 
-The main section is what I would call the meat of the site. The area where the actual content shows through. Because WordPress offers different types of files this section can live in several different files.
+## What do I actually need?
 
-## The sidebar
+So a great question to ask is wich of all these files do I actually need? Every file has it's own functionality that interacts with the backend of WordPress. Usually when I am developing a theme I start with the bare minimum files and then add on from there. In all essence you only need 2 files for the theme to work.
 
-The sidebar is, well you guessed, the sidebar. This file can sit on either the left side of the site and/or the right side of the site. Not all templates require this file but it is one of the main files for the template structure.
+- index.php
+- style.css
 
-## The footer
+## Nice starting point
 
-Last but not least every template could have a footer that will sit at the bottom of the site and carry any additional information needed for your site.
+With these 2 files you can load a theme and start your way to theme development. In all actuality it would be nice to start with the following list.
+
+- index.php
+- style.css
+- header.php
+- footer.php
+- functions.php
