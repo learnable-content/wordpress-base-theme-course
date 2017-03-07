@@ -1,48 +1,17 @@
-# Theme File Structure
+# WordPress Template Hierarchy
 
-It is very important to understand the template folder structure of WordPress so you know which files you need to interact with.
+WordPress is built in a way that determines which of the files in the previous list will actually be rendered. Alot of this depends on what url you hit and what type of url loaded. 
 
-The following link gives us a list reference of the available template files that we can use. This is not by all means the only files we can use but they are the core to what the template directory gives us. [Theme Development](https://codex.wordpress.org/Theme_Development)
+In WordPress you have blogs, those blogs have single urls, you may even have a list of blogs that are in the past and archived. Then you have content pages, the front page of the website, the front page of the blog. The list can go on and on. Depending on which page you hit and what type of page it is, WordPress chooses which file will actually load to display that content.
 
-## List of main files
+[See Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy)
 
-- style.css
-- rtl.css
-- index.php
-- comments.php
-- front-page.php
-- home.php
-- single.php
-- single-{post-type}.php
-- page.php
-- category.php
-- tag.php
-- taxonomy.php
-- author.php
-- date.php
-- archive.php
-- search.php
-- attachment.php
-- image.php
-- 404.php
+In the link above you can see what files get loaded and in what order. The way to get a good handle on how this works is to see this image:
 
-## Additional files
+![WordPress Template Hierarchy](https://developer.wordpress.org/files/2014/10/template-hierarchy.png "WordPress Template Hierarchy")
 
-The additional files that you see in the included twentyseventeen are extra folders to help with the structure and organization. This part of theming is left up to you how you would like to organize.
+Full image: [Template Hierarchy Image](https://developer.wordpress.org/files/2014/10/template-hierarchy.png)
 
-## What do I actually need?
+Make sure to save this image or url to reference it as you are developing. I look at it from left to right and think of it as the right side is the end all file. Remember in the last lesson where I mentioned all you need for a theme is the `style.css` file and the `index.php`. So the rest of the stuff to the left of `index.php` in the diagram is just icing to the theme cake. Extra ways to make additional theme style changes.
 
-So a great question to ask is wich of all these files do I actually need? Every file has it's own functionality that interacts with the backend of WordPress. Usually when I am developing a theme I start with the bare minimum files and then add on from there. In all essence you only need 2 files for the theme to work.
-
-- index.php
-- style.css
-
-## Nice starting point
-
-With these 2 files you can load a theme and start your way to theme development. In all actuality it would be nice to start with the following list.
-
-- index.php
-- style.css
-- header.php
-- footer.php
-- functions.php
+So WordPress will decide from the left to right. For example if you follow the path from left to right on __Singular Page__ and then follow the path of __Blog Post__ you will see that you can actually have a `single-post.php` file that will be loaded. If that file is not found the next available file that can be loaded would be `single.php` then `singular.php`. Finally if none of those files are available in the theme then `index.php` is as mentioned before the end all file that will be loaded.
