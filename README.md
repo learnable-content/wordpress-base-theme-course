@@ -1,24 +1,11 @@
-# Blog Templates
+# Page Template
 
-So you always have to remember that WordPress started as a blogging software. Through the years it has fully developed into a full cms packaged used by many sites today. So keeping this in mind remember that templating/theming a site is blog first focussed. So by default the blog part of WordPress shows on first install.
+So remembering again that WordPress is blog first you have to set it up on the back end for a page to load first as the home page. If not then the blog is the home page and then you will access the pages through their urls.
 
 ## index.php
 
-Remembering the WordPress' theme template hierarchy this file is the end all file for WordPress. It is also the file that runs the blog home page. So normally we could just leave this file as the blog posts page.
+So if you have no other files then the `index.php` will be used as the page template for any pages that you have.
 
-## home.php
+## page.php
 
-If for some reason did not want the `index.php` file to be the blog posts page we could use this file and alter it's style or structure that would then be the blogs "home page". For the most part just having the `index.php` will suffice for site projects.
-
-## single.php
-
-When you click on a blog post you then will get that blog post on it's own. This blog post on it's own will default to use the `index.php` file unless we create a `single.php` file to use for all "single" block posts.
-
-## Additional files
-
-Be sure to reference the template hierarchy diagram in the previous lesson. There are some additional files that you can use that interact with the blog side of WordPress. Some examples are below:
-
-- archive.php (We will discuss later)
-- tag.php - for tags inside WordPress
-- category.php - for categories inside the blog
-- author.php - for authors of blog posts
+So you would want to create a `page.php` file to theme any pages that are created in the admin area. So let's create a test page and see how our `page.php` will interact with this.
