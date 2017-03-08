@@ -1,11 +1,20 @@
-# Page Template
+# Archive Template
 
-So remembering again that WordPress is blog first you have to set it up on the back end for a page to load first as the home page. If not then the blog is the home page and then you will access the pages through their urls.
+The archive portion of WordPress can be anywhere from tags, categories and older posts. Anything that provides an archived list for WordPress will work off this template.
 
 ## index.php
 
-So if you have no other files then the `index.php` will be used as the page template for any pages that you have.
+If there is no `archive.php` file then WordPress will use the `index.php` for all archive needs.
 
-## page.php
+## archive.php
 
-So you would want to create a `page.php` file to theme any pages that are created in the admin area. So let's create a test page and see how our `page.php` will interact with this.
+All you would need to do is create an `archive.php` file and alter it to suite your theme needs.
+
+## Additional archive templates
+
+As mentioned before you can have additional control if for the different types of archive files. Those files are listed below:
+
+- author.php - for all authors to the blog
+- category.php - for all categories listed in the blog
+- date - archive blog posts by date
+- tag.php - for all tags related to the site
