@@ -1,17 +1,24 @@
-# WordPress Template Hierarchy
+# Blog Templates
 
-WordPress is built in a way that determines which of the files in the previous list will actually be rendered. Alot of this depends on what url you hit and what type of url loaded. 
+So you always have to remember that WordPress started as a blogging software. Through the years it has fully developed into a full cms packaged used by many sites today. So keeping this in mind remember that templating/theming a site is blog first focussed. So by default the blog part of WordPress shows on first install.
 
-In WordPress you have blogs, those blogs have single urls, you may even have a list of blogs that are in the past and archived. Then you have content pages, the front page of the website, the front page of the blog. The list can go on and on. Depending on which page you hit and what type of page it is, WordPress chooses which file will actually load to display that content.
+## index.php
 
-[See Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy)
+Remembering the WordPress' theme template hierarchy this file is the end all file for WordPress. It is also the file that runs the blog home page. So normally we could just leave this file as the blog posts page.
 
-In the link above you can see what files get loaded and in what order. The way to get a good handle on how this works is to see this image:
+## home.php
 
-![WordPress Template Hierarchy](https://developer.wordpress.org/files/2014/10/template-hierarchy.png "WordPress Template Hierarchy")
+If for some reason did not want the `index.php` file to be the blog posts page we could use this file and alter it's style or structure that would then be the blogs "home page". For the most part just having the `index.php` will suffice for site projects.
 
-Full image: [Template Hierarchy Image](https://developer.wordpress.org/files/2014/10/template-hierarchy.png)
+## single.php
 
-Make sure to save this image or url to reference it as you are developing. I look at it from left to right and think of it as the right side is the end all file. Remember in the last lesson where I mentioned all you need for a theme is the `style.css` file and the `index.php`. So the rest of the stuff to the left of `index.php` in the diagram is just icing to the theme cake. Extra ways to make additional theme style changes.
+When you click on a blog post you then will get that blog post on it's own. This blog post on it's own will default to use the `index.php` file unless we create a `single.php` file to use for all "single" block posts.
 
-So WordPress will decide from the left to right. For example if you follow the path from left to right on __Singular Page__ and then follow the path of __Blog Post__ you will see that you can actually have a `single-post.php` file that will be loaded. If that file is not found the next available file that can be loaded would be `single.php` then `singular.php`. Finally if none of those files are available in the theme then `index.php` is as mentioned before the end all file that will be loaded.
+## Additional files
+
+Be sure to reference the template hierarchy diagram in the previous lesson. There are some additional files that you can use that interact with the blog side of WordPress. Some examples are below:
+
+- archive.php (We will discuss later)
+- tag.php - for tags inside WordPress
+- category.php - for categories inside the blog
+- author.php - for authors of blog posts
