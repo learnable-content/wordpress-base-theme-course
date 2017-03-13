@@ -1,7 +1,20 @@
-# The 404 Page
+# Creating a Custom Template
 
-Whenever there is a url that is entered and there is not a page created for it then WordPress or any page for that matter a 404 not found page will be served. Over the years there have been a great deal of creative 404 pages that have been created. If you see here [Creative 404 Pages](http://www.creativebloq.com/web-design/best-404-pages-812505) you can have a log of fun with this template. 
+Sometimes we may need a template that does not follow the natural order of the template hierarchy.
 
-The cool thing about this too is you really don't have to pass any data to it as well so it could have an entirely different look.
+In order to do so you can create a template with any name you would like and as long as it is in the `theme > themname` directory then WordPress will pick it up. Normally it would be best to to create a structure to this so you can keep track of it.
 
-All you need to do to take advantage of this part of WordPress is create file called `404.php`. After this file is created you can then start developing what you need for your missing pages. You can even provide a way for the user to search the database for something they were look for.
+So we will create a folder and file called `templates > template-sample.php`. But this is not enough to get the template going for what we need. Once we create that file we would need a little bit of code that sits in the comment area on the top of this php file.
+
+```
+<?php
+
+/*
+Template name: Whatever Name you like
+*/
+```
+Adding this to the top of our page will interact with the admin area of WordPress. See below.
+
+![Custom Template File](img/template-file.png)
+
+After selecting and placing in content you can alter this file to look however you want it to look.
