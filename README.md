@@ -1,9 +1,7 @@
-# Front Page Template
+# The 404 Page
 
-When you are creating a web page with WordPress remember first that WordPress is blog first and on initial install you have to do a little extra work to make it website first. In the settings you need to go to dashboard then go to `Settings > Reading` and you will see that you can control what part of WordPress shows up first on first load.
+Whenever there is a url that is entered and there is not a page created for it then WordPress or any page for that matter a 404 not found page will be served. Over the years there have been a great deal of creative 404 pages that have been created. If you see here [Creative 404 Pages](http://www.creativebloq.com/web-design/best-404-pages-812505) you can have a log of fun with this template. 
 
-![Settings Dashboard](img/reading.png)
+The cool thing about this too is you really don't have to pass any data to it as well so it could have an entirely different look.
 
-Here you can check `A static page` and select front page dropdown to select a page in the system to serve as the home page.
-
-When this is selected the default file that will be used would be the `index.php` file. However we could have a different look just for the main root of the page. If you create a `front-page.php` then WordPress will use this file as the homepage theme file.
+All you need to do to take advantage of this part of WordPress is create file called `404.php`. After this file is created you can then start developing what you need for your missing pages. You can even provide a way for the user to search the database for something they were look for.
