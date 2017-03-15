@@ -1,28 +1,15 @@
-# Functions.php and use cases
+# wp\_head() and wp\_footer()
 
-The functions file for a theme is very important to the development and content usage of your site. In the `functions.php` file you will have some WordPress related functions that are provided by the WordPress base. However you could also create your own functions that help with just about anything you would like to do.
+WordPress comes with a good number of helper functions. Although we may not use them all for every theme there are some that should be used on every theme. Two of these functions are `wp_head()` and `wp_footer()`.
 
-## Loading
+# wp_head()
 
-The cool thing is that this file is automatically loaded and available in all of your theme files. So add any function in this file and you will be able to acces that function in your theme files.
+In our `header.php` is the main area where we place our `wp_head()`. For the most part it goes right before the closing `</head>` tag of your html document. But what is it exactly? `wp_head()` creates what is called a hook for us. It gives us a hook to hook on other css and script files.
 
-## Example
+The other thing it allows us to do is when you install new plugins and those plugins come with scripts or css files they get hook on to these functions to add their styles and scripts.
 
-Let's add a simple function that echos 'Hello World'.
+# wp_footer()
 
-```
-function helloWorld() {
-    echo 'Hello World';
-}
-```
-Go to any of your template files I will go to the `index.php` and add it anywhere there to call.
+The `wp_footer()` is for the most part always in our `footer.php` file. It does the same thing as wp_head() in the fact that it creates a hook for us to put other script files here in the footer area. It does that as well as allows installed plugins to hook into for additional script loading.
 
-```
-<?php helloWordl(); ?>
-```
 
-When we visit the page you can see that the function was called and indeed puts our string to the screen.
-
-## Real life example
-
-A real life example and use case could be if the excerpts from WordPress are not working for you then you can easily create a function that does a `substr()` and some other magic that will give you an excerpt you are proud of.
