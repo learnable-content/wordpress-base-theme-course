@@ -20,6 +20,10 @@ This is the name or label we want to call this css file that loads. It is very i
 
 The actual source url for the css file we are trying to load. Can be a local file or maybe it is a file that exists on a cdn somewhere.
 
+### $deps
+
+Where this script file depends on another file like `jquery` or something else. Also note we do not need to load `jquery` at all because it is already prepackaged with WordPress.
+
 ### $ver
 
 This is a way that we can version our files and appends a ?ver=1.2.3 at the end of the file. This helps in case you are caching your script files and need the server to reload a new file if you are editing the script file.
