@@ -1,5 +1,28 @@
-# Front Page Template
+# Functions.php and use cases
 
-When you are creating a web page with WordPress remember first that WordPress is blog first and on initial install you have to do a little extra work to make it website first. There is some minor admin adjustments that you do in the dashboard to get it to behave this way and we will get to that in a later lesson.
+The functions file for a theme is very important to the development and content usage of your site. In the `functions.php` file you will have some WordPress related functions that are provided by the WordPress base. However you could also create your own functions that help with just about anything you would like to do.
 
-Once set remember the template hierarchy of WordPress going from left to right the `index.php` is the file that will be served up as the home page. If we simply create a page called `front-page.php` we are able to have another template to theme out for the front page. For the most part of theming the front page of your site usually does tend to take a different look. Although its very similar and should cary the brand it is different enough to need it's own file.
+## Loading
+
+The cool thing is that this file is automatically loaded and available in all of your theme files. So add any function in this file and you will be able to acces that function in your theme files.
+
+## Example
+
+Let's add a simple function that echos 'Hello World'.
+
+```
+function helloWorld() {
+    echo 'Hello World';
+}
+```
+Go to any of your template files I will go to the `index.php` and add it anywhere there to call.
+
+```
+<?php helloWordl(); ?>
+```
+
+When we visit the page you can see that the function was called and indeed puts our string to the screen.
+
+## Real life example
+
+A real life example and use case could be if the excerpts from WordPress are not working for you then you can easily create a function that does a `substr()` and some other magic that will give you an excerpt you are proud of.
