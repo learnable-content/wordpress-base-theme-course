@@ -458,6 +458,11 @@ function twentyseventeen_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
 
+function load_scripts() {
+	wp_enqueue_script( 'myLable', '/url/to/scriptFile.js' ), array('jquery'), '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'load_scripts' );
+
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images.
