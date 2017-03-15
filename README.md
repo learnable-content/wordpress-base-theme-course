@@ -36,7 +36,7 @@ A boolean that we pass to tell WordPress to put it in the footer (if true) or pl
 
 ```
 function load_scripts() {
-		wp_enqueue_script( 'myLable', '/url/to/scriptFile.js' ), array('jquery'), '1.0.0', true );
+		wp_enqueue_script( 'myLabel', '/url/to/scriptFile.js' ), array('jquery'), '1.0.0', true );
 
 }
 ```
