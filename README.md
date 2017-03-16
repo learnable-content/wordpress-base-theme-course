@@ -1,45 +1,22 @@
-# wp\_enqueue\_style()
+# get\_template\_part()
 
-Just like `wp_enqueue_script()` the `wp_enqueue_style()` works the same however it is only for loading css style sheets. The function for the most part looks the same with some key differences.
+get_template_part() is WordPress' way of including/requiring a file. It has a way that it loads the file as way using a slug (partial name) of the file. The cool thing is it will fail silently if the file does not exist.
 
-## The function
-
-The function looks like this the code below:
+To include a file in your templates you could use:
 
 ```
-wp_enqueue_style( string $handle, string $src = '', array $deps = array(), string|bool|null $ver = false, string $media = 'all' )
+<?php get_template_part( 'loop', 'index' ); ?>
 ```
 
-According to the documentation you can see a list of what each param should be. Though we may not use them all there are there in case we need to. [wp_enqueue_style() documenation parameters](https://developer.wordpress.org/reference/functions/wp_enqueue_style/#parameters).
+The above would look through the theme root directory for a file with the name `loop-index.php`.
 
-### $handle
+## Some organization
 
-This is the name or label we want to call this css file that loads. It is very important to make sure that this handle name is unique and no other handles have the same name.
-
-### $src
-
-The actual source url for the css file we are trying to load. Can be a local file or maybe it is a file that exists on a cdn somewhere.
-
-### $deps
-
-Where this script file depends on another file like `jquery` or something else. Also note we do not need to load `jquery` at all because it is already prepackaged with WordPress.
-
-### $ver
-
-This is a way that we can version our files and appends a ?ver=1.2.3 at the end of the file. This helps in case you are caching your script files and need the server to reload a new file if you are editing the script file.
-
-### $media
-
-Whether this file needs to be loaded for all media types. All, print or screen.
-
-## Code to trigger the queue
+I normally create a folder called `partials` in our theme directory. Inside of this folder I create all the files I want to include for my theme. For example if we want to section off our navigation we would create a file in this directory like such `partials > main-nav.php`. We would then include this file like so:
 
 ```
-function load_scripts() {
-		wp_enqueue_script( 'myLabel', '/url/to/scriptFile.js' ), array('jquery'), '1.0.0', true );
-		wp_enqueue_style( 'myCssLabel', '/url/to/cssFile.css', array(), '1.0' );
-}
-add_action( 'wp_enqueue_scripts', 'load_scripts' );
+get_template_part('partials/main', 'nav');
 ```
+## When to use
 
-We could load several script and style sheets in this function alone.
+When to use `get_template_part()` is entirely up to you and your theme. Normally if something is repeated in code then that is a good indicator to break it into it's own file and reuse it whenever you need. Think of navigation, heading images, some information on the sidebar that you need on separate files.
