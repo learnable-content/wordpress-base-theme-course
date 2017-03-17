@@ -40,6 +40,8 @@
 			</div><!-- .navigation-top -->
 		<?php endif; ?>
 
+		<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+
 	</header><!-- #masthead -->
 
 	<?php
