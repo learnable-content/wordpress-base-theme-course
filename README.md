@@ -18,9 +18,13 @@ Where `Header Menu` is used as the label for the admin area. You could have mult
 
 ```
 function register_my_menu() {
-  register_nav_menu('header-menu',__( 'Header Menu' ));
-  register_nav_menu('side-menu',__( 'Side Menu' ));
-  register_nav_menu('footer-menu',__( 'Footer Menu' ));
+    register_nav_menu(
+        array(
+            'header-menu',__( 'Header Menu' ),
+            'side-menu',__( 'Side Menu' ),
+            'footer-menu',__( 'Footer Menu' )
+        )
+    );
 }
 add_action( 'init', 'register_my_menu' );
 ```
