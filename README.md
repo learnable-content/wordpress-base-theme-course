@@ -1,29 +1,31 @@
-# get\_template\_directory\_uri()
+# wp\_nav_\menu()
 
-Another helpful function to use is `get_template_directory_uri()`. This function gives us the theme directory path. This is a very useful for many reasons when it comes to including assets, images or even urls.
+`wp_nav_menu()` is a helper function that WordPress provides for us to be able to call any navigation from our administration area. There are many options that this helper function gives us. From which navigation to pull down to what html wraps around the navigation menu.
 
-## Asset examples
+As you can see from the documentation there are a great number of parameters that are available to us:
 
-### Image
+[wp\_nav\_menu() parameters](https://developer.wordpress.org/reference/functions/wp_nav_menu/#parameters).
 
-```
-<img src="<?php echo get_template_directory_uri(); ?>/img/someImage.jpg">
-```
-
-### Script file
+So first we will need to register a navigation menu that will show up in the admin area. An example of this code would be.
 
 ```
-<script src="<?php echo get_template_directory_uri(); ?>/js/scriptFile.js">
+function register_my_menu() {
+  register_nav_menu('header-menu',__( 'Header Menu' ));
+}
+add_action( 'init', 'register_my_menu' );
 ```
-
-### CSS file
-
-```
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-```
-
-### Url example
+Where `Header Menu` is used as the label for the admin area. You could have multiple menu areas that are tied to your theme. Think main navigation, side navigation and maybe footer navigation. So this could look like this:
 
 ```
-<a href="<?php echo get_template_directory_uri(); ?>/url/path">Test</a>
+function register_my_menu() {
+  register_nav_menu('header-menu',__( 'Header Menu' ));
+  register_nav_menu('side-menu',__( 'Side Menu' ));
+  register_nav_menu('footer-menu',__( 'Footer Menu' ));
+}
+add_action( 'init', 'register_my_menu' );
+```
+Now that we have this registered we need to call it where in our theme we want the navigation to show up. You would place this code below where you want it to show up.
+
+```
+<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 ```
