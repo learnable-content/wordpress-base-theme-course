@@ -1,10 +1,10 @@
-# Creating the Header and get_header
+# Creating the Sidebar and get_sidebar
 
-`get_header()` is a function WordPress gives us to include the `header.php` file. The `header.php` file is usually where the top portion of our template is located. This file has the doctype, head and top portion of the theme elements.
+`get_sidebar()` is as you guessed it the sidebar of a template. It works very similar to the `get_header()` function in where WordPress will look for a file called `sidebar.php`.
 
-So each template file has the ability to pull in the header image. Every once in a while the header would need to be different from another page. you can easily create another header file by creating a php file with the scheme `header-somename.php`. So if we needed a header file just for blog we would create a file called `header-blog.php`. Then in our theme directory we would have something like this:
+Again if the template needs a separte sidebar than the main preloaded WordPress one then you would create `sidebar-blog.php` file. Then inside of your template theme you would have something like this to call that file.
 
 ```
-<?php get_header('blog'); ?>
+<?php get_sidebar('blog'); ?>
 ```
-That function alone is enought to call the correct file and load it as the header.
+That function alone is enought to call the correct file and load it as the sidebar in our template.
