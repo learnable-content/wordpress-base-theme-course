@@ -1,45 +1,62 @@
-# Move the navigation to a partial view
+# Pulling it all together
 
-We need to get practice of breaking out functionality into separate files. This is for easility maintaining our themes and helps when there is repetitive code that we would need to place over and over again.
+So now that we separated all of the areas that will be making up our site how do we pull it all together. All of the functions we have gone over already come in handy now.
 
-Inside our `partials` folder we created a file called `main-nav.php`. We can use this same file for our main top navigation. Inside of this file place the following code from our `header.php` file.
+## Starting with the index.php
 
-```
-<header>
-    <div class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><span>M</span>oderna</a>
-            </div>
-            <div class="navbar-collapse collapse ">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="components.html">Components</a></li>
-                            <li><a href="pricingbox.html">Pricing box</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
-```
-
-Now inside our `header.php` file we replace that same code with a partial load call like so:
+Remember that the `index.php` file is our end all file for out theme so it seems fit to start there. After the changes there we will copy over all the changes to the other needed files.
 
 ```
-<?php get_template_part('partials/main', 'nav'); ?>
-```
+<?php get_header(); ?>
+<section id="inner-headline">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<ul class="breadcrumb">
+					<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+					<li class="active">Blog</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
 
+				<?php
+				if ( have_posts() ) :
+
+					/* Start the Loop */
+					while ( have_posts() ) : the_post(); ?>
+
+						<article>
+							<div class="post-image">
+								<div class="post-heading">
+									<h3><a href="#"><?php the_title(); ?></a></h3>
+								</div>
+								<?php if ( has_post_thumbnail() ) : ?>
+									<?php the_post_thumbnail(); ?>
+								<?php endif; ?>
+							</div>
+							<?php the_excerpt(); ?>
+							<div class="bottom-article">
+								<ul class="meta-post">
+									<li><i class="icon-calendar"></i><a href="#"><?php the_date('F j, Y'); ?></a></li>
+									<li><i class="icon-comments"></i><a href="#"><?php comments_number( 'no comments', 'one comment', '% Comments' ); ?></a></li>
+								</ul>
+								<a href="<?php get_permalink(); ?>" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
+							</div>
+						</article>
+
+				<?php
+					endwhile;
+				endif; ?>
+			</div>
+			<?php get_sidebar(); ?>
+		</div>
+	</div>
+</section>
+<?php get_footer();
+```
