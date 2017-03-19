@@ -433,7 +433,16 @@ function sitepoint_css() {
 add_action( 'wp_enqueue_scripts', 'sitepoint_css' );
 
 function sitepoint_scripts() {
-	wp_enqueue_script( 'myLable', '/url/to/scriptFile.js' ), array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'sitepoint-jqueryeasing', get_theme_file_uri('/js/jquery.easing.1.3.js'), array('jquery'), '1.3', true );
+	wp_enqueue_script( 'sitepoint-bootstrap', get_theme_file_uri('/js/bootstrap.min.js'), array('jquery'), '3.1.0', true );
+	wp_enqueue_script( 'sitepoint-fancybox', get_theme_file_uri('/js/jquery.fancybox.pack.js'), array('jquery'), '2.1.4', true );
+	wp_enqueue_script( 'sitepoint-fancybox-media', get_theme_file_uri('/js/jquery.fancybox-media.js'), array('jquery'), '1.0.5', true );
+	wp_enqueue_script( 'sitepoint-prettify', get_theme_file_uri('/js/google-code-prettify/prettify.js'), array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'sitepoint-quicksand', get_theme_file_uri('/js/portfolio/jquery.quicksand.js'), array('jquery'), '1.2.2', true );
+	wp_enqueue_script( 'sitepoint-setting', get_theme_file_uri('/js/portfolio/setting.js'), array('jquery'), '1.3', true );
+	wp_enqueue_script( 'sitepoint-flexslider', get_theme_file_uri('/js/jquery.flexslider.js'), array('jquery'), '2.1', true );
+	wp_enqueue_script( 'sitepoint-animate', get_theme_file_uri('/js/animate.js'), array('jquery'), '1.0', true );
+	wp_enqueue_script( 'sitepoint-custom', get_theme_file_uri('/js/custom.js'), array('jquery'), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'sitepoint_scripts' );
 
