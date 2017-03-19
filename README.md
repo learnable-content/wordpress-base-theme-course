@@ -1,66 +1,45 @@
-# Slice up the sidebar if need be
+# Move the navigation to a partial view
 
-Slicing up the sidebar is just like the header and footer. Our theme's homepage does not have a sidebar but the blog template does so we will use that one. There are no WordPress functions that we would need inside the sidebar file.
+We need to get practice of breaking out functionality into separate files. This is for easility maintaining our themes and helps when there is repetitive code that we would need to place over and over again.
 
-Enter the following code in `sidebar.php`:
+Inside our `partials` folder we created a file called `main-nav.php`. We can use this same file for our main top navigation. Inside of this file place the following code from our `header.php` file.
 
 ```
-<div class="col-lg-4">
-    <aside class="right-sidebar">
-        <div class="widget">
-            <form class="form-search">
-                <input class="form-control" type="text" placeholder="Search..">
-            </form>
+<header>
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><span>M</span>oderna</a>
+            </div>
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="components.html">Components</a></li>
+                            <li><a href="pricingbox.html">Pricing box</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="widget">
-            <h5 class="widgetheading">Categories</h5>
-            <ul class="cat">
-                <li><i class="icon-angle-right"></i><a href="#">Web design</a><span> (20)</span></li>
-                <li><i class="icon-angle-right"></i><a href="#">Online business</a><span> (11)</span></li>
-                <li><i class="icon-angle-right"></i><a href="#">Marketing strategy</a><span> (9)</span></li>
-                <li><i class="icon-angle-right"></i><a href="#">Technology</a><span> (12)</span></li>
-                <li><i class="icon-angle-right"></i><a href="#">About finance</a><span> (18)</span></li>
-            </ul>
-        </div>
-        <div class="widget">
-            <h5 class="widgetheading">Latest posts</h5>
-            <ul class="recent">
-                <li>
-                <img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
-                <h6><a href="#">Lorem ipsum dolor sit</a></h6>
-                <p>
-                     Mazim alienum appellantur eu cu ullum officiis pro pri
-                </p>
-                </li>
-                <li>
-                <a href="#"><img src="img/dummies/blog/65x65/thumb2.jpg" class="pull-left" alt="" /></a>
-                <h6><a href="#">Maiorum ponderum eum</a></h6>
-                <p>
-                     Mazim alienum appellantur eu cu ullum officiis pro pri
-                </p>
-                </li>
-                <li>
-                <a href="#"><img src="img/dummies/blog/65x65/thumb3.jpg" class="pull-left" alt="" /></a>
-                <h6><a href="#">Et mei iusto dolorum</a></h6>
-                <p>
-                     Mazim alienum appellantur eu cu ullum officiis pro pri
-                </p>
-                </li>
-            </ul>
-        </div>
-        <div class="widget">
-            <h5 class="widgetheading">Popular tags</h5>
-            <ul class="tags">
-                <li><a href="#">Web design</a></li>
-                <li><a href="#">Trends</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Internet</a></li>
-                <li><a href="#">Tutorial</a></li>
-                <li><a href="#">Development</a></li>
-            </ul>
-        </div>
-    </aside>
-</div>
+    </div>
+</header>
 ```
 
-There is not much else we need to do here until a later time we can add widgets to the sidebar area.
+Now inside our `header.php` file we replace that same code with a partial load call like so:
+
+```
+<?php get_template_part('partials/main', 'nav'); ?>
+```
+
