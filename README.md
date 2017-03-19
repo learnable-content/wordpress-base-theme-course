@@ -1,273 +1,11 @@
-# Slicing up the header
+# Slicing up the footer
 
-Now comes the time where we can grab a template and start hacking to break it up into the areas we need. We are going to use a template form the bootstrap website.
+Slicing up the footer is very similiar to slicing up the header. We want to get the bottom portion of html and add the WordPress functions needed.
 
-[Free template download](https://bootstrapmade.com/demo/Moderna)
-
-Seeing the `index.html` file we can verify what should go inside the `header.php` file. See html below:
+So after looking through our template you could section out the footer like so:
 
 ```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Moderna - Bootstrap 3 flat corporate template</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="http://bootstraptaste.com" />
-<!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
-
-<!-- Theme skin -->
-<link href="skins/default.css" rel="stylesheet" />
-
-<!-- =======================================================
-    Theme Name: Moderna
-    Theme URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-======================================================= -->
-
-</head>
-<body>
-<div id="wrapper">
-	<!-- start header -->
-	<header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><span>M</span>oderna</a>
-                </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="typography.html">Typography</a></li>
-                                <li><a href="components.html">Components</a></li>
-								<li><a href="pricingbox.html">Pricing box</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-	</header>
-	<!-- end header -->
-	<section id="featured">
-	<!-- start slider -->
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-	<!-- Slider -->
-        <div id="main-slider" class="flexslider">
-            <ul class="slides">
-              <li>
-                <img src="img/slides/1.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Modern Design</h3> 
-					<p>Duis fermentum auctor ligula ac malesuada. Mauris et metus odio, in pulvinar urna</p> 
-					<a href="#" class="btn btn-theme">Learn More</a>
-                </div>
-              </li>
-              <li>
-                <img src="img/slides/2.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Fully Responsive</h3> 
-					<p>Sodales neque vitae justo sollicitudin aliquet sit amet diam curabitur sed fermentum.</p> 
-					<a href="#" class="btn btn-theme">Learn More</a>
-                </div>
-              </li>
-              <li>
-                <img src="img/slides/3.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Clean & Fast</h3> 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit donec mer lacinia.</p> 
-					<a href="#" class="btn btn-theme">Learn More</a>
-                </div>
-              </li>
-            </ul>
-        </div>
-	<!-- end slider -->
-			</div>
-		</div>
-	</div>	
-	
-	
-
-	</section>
-	<section class="callaction">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="big-cta">
-					<div class="cta-text">
-						<h2><span>Moderna</span> HTML Business Template</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</section>
-	<section id="content">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="row">
-					<div class="col-lg-3">
-						<div class="box">
-							<div class="box-gray aligncenter">
-								<h4>Fully responsive</h4>
-								<div class="icon">
-								<i class="fa fa-desktop fa-3x"></i>
-								</div>
-								<p>
-								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
-								</p>
-									
-							</div>
-							<div class="box-bottom">
-								<a href="#">Learn more</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="box">
-							<div class="box-gray aligncenter">
-								<h4>Modern Style</h4>
-								<div class="icon">
-								<i class="fa fa-pagelines fa-3x"></i>
-								</div>
-								<p>
-								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
-								</p>
-									
-							</div>
-							<div class="box-bottom">
-								<a href="#">Learn more</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="box">
-							<div class="box-gray aligncenter">
-								<h4>Customizable</h4>
-								<div class="icon">
-								<i class="fa fa-edit fa-3x"></i>
-								</div>
-								<p>
-								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
-								</p>
-									
-							</div>
-							<div class="box-bottom">
-								<a href="#">Learn more</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="box">
-							<div class="box-gray aligncenter">
-								<h4>Valid HTML5</h4>
-								<div class="icon">
-								<i class="fa fa-code fa-3x"></i>
-								</div>
-								<p>
-								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
-								</p>
-									
-							</div>
-							<div class="box-bottom">
-								<a href="#">Learn more</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- divider -->
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="solidline">
-				</div>
-			</div>
-		</div>
-		<!-- end divider -->
-		<!-- Portfolio Projects -->
-		<div class="row">
-			<div class="col-lg-12">
-				<h4 class="heading">Recent Works</h4>
-				<div class="row">
-					<section id="projects">
-					<ul id="thumbs" class="portfolio">
-						<!-- Item Project and Filter Name -->
-						<li class="col-lg-3 design" data-id="id-0" data-type="web">
-						<div class="item-thumbs">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 1" href="img/works/1.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
-						</a>
-						<!-- Thumb Image and Description -->
-						<img src="img/works/1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-						</div>
-						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 2" href="img/works/2.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
-						</a>
-						<!-- Thumb Image and Description -->
-						<img src="img/works/2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 3" href="img/works/3.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
-						</a>
-						<!-- Thumb Image and Description -->
-						<img src="img/works/3.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 4" href="img/works/4.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
-						</a>
-						<!-- Thumb Image and Description -->
-						<img src="img/works/4.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-						</li>
-						<!-- End Item Project -->
-					</ul>
-					</section>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	</section>
-	<footer>
+<footer>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
@@ -349,94 +87,27 @@ Seeing the `index.html` file we can verify what should go inside the `header.php
 	</footer>
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script>
-<script src="js/google-code-prettify/prettify.js"></script>
-<script src="js/portfolio/jquery.quicksand.js"></script>
-<script src="js/portfolio/setting.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
-
+<?php wp_footer(); ?>
 </body>
 </html>
 ```
 
-Here we want to make decisions on what is going to be part of the header.php file. For the most part I include the navigation and sometimes the header images as well in the blog template. However in this case not ever page has the header image so I will only include the navigation.
+Notice we haven't added the scripts and as you guessed it these will go in our functions file to load them.
+
+## Loading Assets
 
 ```
-<!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js no-svg">
-<head>
-
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-
-<title>Test Template</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="http://bootstraptaste.com" />
-<!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
-
-<!-- Theme skin -->
-<link href="skins/default.css" rel="stylesheet" />
-
-<!-- =======================================================
-    Theme Name: Moderna
-    Theme URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-======================================================= -->
-
-<?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
-<div id="wrapper">
-	<!-- start header -->
-	<header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><span>M</span>oderna</a>
-                </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="typography.html">Typography</a></li>
-                                <li><a href="components.html">Components</a></li>
-								<li><a href="pricingbox.html">Pricing box</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-	</header>
+function sitepoint_scripts() {
+	wp_enqueue_script( 'sitepoint-jqueryeasing', get_theme_file_uri('/js/jquery.easing.1.3.js'), array('jquery'), '1.3', true );
+	wp_enqueue_script( 'sitepoint-bootstrap', get_theme_file_uri('/js/bootstrap.min.js'), array('jquery'), '3.1.0', true );
+	wp_enqueue_script( 'sitepoint-fancybox', get_theme_file_uri('/js/jquery.fancybox.pack.js'), array('jquery'), '2.1.4', true );
+	wp_enqueue_script( 'sitepoint-fancybox-media', get_theme_file_uri('/js/jquery.fancybox-media.js'), array('jquery'), '1.0.5', true );
+	wp_enqueue_script( 'sitepoint-prettify', get_theme_file_uri('/js/google-code-prettify/prettify.js'), array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'sitepoint-quicksand', get_theme_file_uri('/js/portfolio/jquery.quicksand.js'), array('jquery'), '1.2.2', true );
+	wp_enqueue_script( 'sitepoint-setting', get_theme_file_uri('/js/portfolio/setting.js'), array('jquery'), '1.3', true );
+	wp_enqueue_script( 'sitepoint-flexslider', get_theme_file_uri('/js/jquery.flexslider.js'), array('jquery'), '2.1', true );
+	wp_enqueue_script( 'sitepoint-animate', get_theme_file_uri('/js/animate.js'), array('jquery'), '1.0', true );
+	wp_enqueue_script( 'sitepoint-custom', get_theme_file_uri('/js/custom.js'), array('jquery'), '1.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'sitepoint_scripts' );
 ```
-
-Notice there are some functions that I leave in place that WordPress gives us from the twentyseventeen theme set. Later we may move our navigation to a separate area as well and include it as a template part. 
-
-## Asset files
-
-We will also move all asset file calls to the `functions.php` file. While we are here in the functions file we can alter the theme name prefix. This is more of a label and help if we are going to be using a language file down the road.
