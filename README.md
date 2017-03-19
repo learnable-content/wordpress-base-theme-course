@@ -435,4 +435,8 @@ Here we want to make decisions on what is going to be part of the header.php fil
 	</header>
 ```
 
-Notice there are some functions that I leave in place that WordPress gives us from the twentyseventeen theme set. Later we may move our navigation to a separate area as well and include it as a template part.
+Notice there are some functions that I leave in place that WordPress gives us from the twentyseventeen theme set. Later we may move our navigation to a separate area as well and include it as a template part. 
+
+## Asset files
+
+We will also move all asset file calls to the `functions.php` file. While we are here in the functions file we can alter the theme name prefix. This is more of a label and help if we are going to be using a language file down the road.
