@@ -440,3 +440,19 @@ Notice there are some functions that I leave in place that WordPress gives us fr
 ## Asset files
 
 We will also move all asset file calls to the `functions.php` file. While we are here in the functions file we can alter the theme name prefix. This is more of a label and help if we are going to be using a language file down the road.
+
+```
+function sitepoint_css() {
+	// Add custom fonts, used in the main stylesheet.
+	wp_enqueue_style( 'sitepoint-fonts', sitepoint_fonts_url(), array(), null );
+
+	wp_enqueue_style( 'sitepoint-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'sitepoint-bootstrap', get_theme_file_uri('/css/`bootstrap.min.css'), array(), 1.0);
+	wp_enqueue_style( 'sitepoint-fancybox', get_theme_file_uri('/css/fancybox/jquery.fancybox.css'), array(), 1.0);
+	wp_enqueue_style( 'sitepoint-carousel', get_theme_file_uri('/css/jcarousel.css'), array(), 1.0);
+	wp_enqueue_style( 'sitepoint-flexslider', get_theme_file_uri('/css/flexslider.css'), array(), 1.0);
+	wp_enqueue_style( 'sitepoint-style', get_theme_file_uri('/css/style.css'), array(), 1.0);
+	wp_enqueue_style( 'sitepoint-default', get_theme_file_uri('/css/default.css'), array(), 1.0);
+}
+add_action( 'wp_enqueue_scripts', 'sitepoint_css' );
+```
