@@ -322,6 +322,7 @@ add_filter( 'wp_resource_hints', 'sitepoint_resource_hints', 10, 2 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function sitepoint_widgets_init() {
+	function sitepoint_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'sitepoint' ),
 		'id'            => 'sidebar-1',
@@ -334,7 +335,7 @@ function sitepoint_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'sitepoint' ),
-		'id'            => 'sidebar-2',
+		'id'            => 'footer-1',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -344,7 +345,27 @@ function sitepoint_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 2', 'sitepoint' ),
-		'id'            => 'sidebar-3',
+		'id'            => 'footer-2',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer 3', 'sitepoint' ),
+		'id'            => 'footer-3',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer 4', 'sitepoint' ),
+		'id'            => 'footer-4',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -433,7 +454,7 @@ function sitepoint_css() {
 add_action( 'wp_enqueue_scripts', 'sitepoint_css' );
 
 function sitepoint_scripts() {
-	wp_enqueue_script( 'myLable', '/url/to/scriptFile.js' ), array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'myLable', '/url/to/scriptFile.js', array('jquery'), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'sitepoint_scripts' );
 
