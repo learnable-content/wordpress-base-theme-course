@@ -1,42 +1,38 @@
-# Create your menu areas
+# Create your own custom post type
 
-For the most part we have our main navigation that we want to take over. But sometimes there is navigation in the footer or maybe a sub navigation that we want to have control over in the admin area.
+There is sometimes where you want to create your own post type meaning something to have it's own menu section in the dashboard aside from posts and pages. 
 
-## Register navigation
+## Everything is a post type
 
-Registering a navigation area is easy inside of our `functions.php` file. In our current `functions.php` file you will see the following.
+So everything in WordPress is a post type. Meaning pages are a post type, posts are post types, images and media are attachment post types.
 
-```
-register_nav_menus( array(
-	'top'    => __( 'Top Menu', 'sitepoint' ),
-	'social' => __( 'Social Links Menu', 'sitepoint' ),
-) );
-```
-For our current theme this should be enough for what we need. As you can see we have a main top navigation area and a bottom social media navigation. So we wil leave this as is and remove our test navigation from earlier.
+## Testimonies
 
-Remove the following:
+Lets say you want you own post type that deals with client testimonies. Below is starter code that you could use to start your own post type. You would place this code in your functions.php file but it can be separated into it's own plugin as well.
 
 ```
-function register_my_menu() {
-  	register_nav_menu(
-  		array(
-  			'header-menu',__( 'Header Menu' ),
-  			'side-menu',__( 'Side Menu' ),
-  			'footer-menu',__( 'Footer Menu' )
-  		)
-	);
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'sitepoint_testimonies',
+    array(
+      'labels' => array(
+        'name' => __( 'Testimonies' ),
+        'singular_name' => __( 'Testimony' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
 }
-add_action( 'init', 'register_my_menu' );
 ```
-## Calling our navigation in code
+This is the simplest form of a custom post type and will give you the bare minimum of title and content support out of the box without doing anything else inside of WordPress. We can also alter more behavior for this custom post type like even down to the icon being used in our admin area.
 
-Our code to call that navigation that will be tied will look like this wherever we are wanting to place that navigation.
+Adding this to the second array will give us a talk bubble icon.
 
 ```
-<?php wp_nav_menu( array(
-	'theme_location' => 'top',
-	'menu_id'        => 'top-menu',
-) ); ?>
+'menu_icon' => 'dashicons-format-chat'
 ```
 
-Now all we have to do is load navigation items in our WordPress admin area and they will show here.
+## Calling our post type
+
+We can create a file called `archive-sitepoint_testimonies.php` where that last part of the file is the custom post type name. Inside of this file you can have the same code form `index.php` file and it will lost testimonies from the custom post type admin area.
