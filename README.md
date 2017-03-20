@@ -1,77 +1,42 @@
-# Build your own widgets
+# Create your menu areas
 
-You can think of widgets as blocks of content that we have the availability to add to our sidebars and footer area. Alot of times consumers of WordPress would like to control content on any part of whether it's in the sidebar or in the footer area. Sometimes this content doesn't change from page to page so there is no need to have it as an admin piece on every page. Creating widgets are very easy and we can do so right inside our functions.php file.
+For the most part we have our main navigation that we want to take over. But sometimes there is navigation in the footer or maybe a sub navigation that we want to have control over in the admin area.
 
-## Creating a widget
+## Register navigation
 
-For our current theme I am counting four areas we could use widgets and one sidebar widget. Our could should look like below
+Registering a navigation area is easy inside of our `functions.php` file. In our current `functions.php` file you will see the following.
 
 ```
-function sitepoint_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'sitepoint' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'sitepoint' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+register_nav_menus( array(
+	'top'    => __( 'Top Menu', 'sitepoint' ),
+	'social' => __( 'Social Links Menu', 'sitepoint' ),
+) );
+```
+For our current theme this should be enough for what we need. As you can see we have a main top navigation area and a bottom social media navigation. So we wil leave this as is and remove our test navigation from earlier.
 
-	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'sitepoint' ),
-		'id'            => 'footer-1',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+Remove the following:
 
-	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'sitepoint' ),
-		'id'            => 'footer-2',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name'          => __( 'Footer 3', 'sitepoint' ),
-		'id'            => 'footer-3',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name'          => __( 'Footer 4', 'sitepoint' ),
-		'id'            => 'footer-4',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+```
+function register_my_menu() {
+  	register_nav_menu(
+  		array(
+  			'header-menu',__( 'Header Menu' ),
+  			'side-menu',__( 'Side Menu' ),
+  			'footer-menu',__( 'Footer Menu' )
+  		)
+	);
 }
-add_action( 'widgets_init', 'sitepoint_widgets_init' );
+add_action( 'init', 'register_my_menu' );
 ```
+## Calling our navigation in code
 
-Doing the code above gives us widget areas that we can drag and drop content from WordPress. See image below:
-
-![Widget Area](img/widgets.png)
-
-Now to call a widget inside our theme we would just drop this code wherever we want our widget to show up. We would do the same for the footer areas but replace `sidebar-1` for `footer-1`.
+Our code to call that navigation that will be tied will look like this wherever we are wanting to place that navigation.
 
 ```
-<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-	<aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</aside>
-<?php endif; ?>
+<?php wp_nav_menu( array(
+	'theme_location' => 'top',
+	'menu_id'        => 'top-menu',
+) ); ?>
 ```
 
+Now all we have to do is load navigation items in our WordPress admin area and they will show here.
