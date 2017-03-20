@@ -1,62 +1,77 @@
-# Pulling it all together
+# Build your own widgets
 
-So now that we separated all of the areas that will be making up our site how do we pull it all together. All of the functions we have gone over already come in handy now.
+You can think of widgets as blocks of content that we have the availability to add to our sidebars and footer area. Alot of times consumers of WordPress would like to control content on any part of whether it's in the sidebar or in the footer area. Sometimes this content doesn't change from page to page so there is no need to have it as an admin piece on every page. Creating widgets are very easy and we can do so right inside our functions.php file.
 
-## Starting with the index.php
+## Creating a widget
 
-Remember that the `index.php` file is our end all file for out theme so it seems fit to start there. After the changes there we will copy over all the changes to the other needed files.
+For our current theme I am counting four areas we could use widgets and one sidebar widget. Our could should look like below
 
 ```
-<?php get_header(); ?>
-<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<ul class="breadcrumb">
-					<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
-					<li class="active">Blog</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	</section>
-	<section id="content">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8">
+function sitepoint_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'sitepoint' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'sitepoint' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 
-				<?php
-				if ( have_posts() ) :
+	register_sidebar( array(
+		'name'          => __( 'Footer 1', 'sitepoint' ),
+		'id'            => 'footer-1',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 
-					/* Start the Loop */
-					while ( have_posts() ) : the_post(); ?>
-
-						<article>
-							<div class="post-image">
-								<div class="post-heading">
-									<h3><a href="#"><?php the_title(); ?></a></h3>
-								</div>
-								<?php if ( has_post_thumbnail() ) : ?>
-									<?php the_post_thumbnail(); ?>
-								<?php endif; ?>
-							</div>
-							<?php the_excerpt(); ?>
-							<div class="bottom-article">
-								<ul class="meta-post">
-									<li><i class="icon-calendar"></i><a href="#"><?php the_date('F j, Y'); ?></a></li>
-									<li><i class="icon-comments"></i><a href="#"><?php comments_number( 'no comments', 'one comment', '% Comments' ); ?></a></li>
-								</ul>
-								<a href="<?php get_permalink(); ?>" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
-							</div>
-						</article>
-
-				<?php
-					endwhile;
-				endif; ?>
-			</div>
-			<?php get_sidebar(); ?>
-		</div>
-	</div>
-</section>
-<?php get_footer();
+	register_sidebar( array(
+		'name'          => __( 'Footer 2', 'sitepoint' ),
+		'id'            => 'footer-2',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer 3', 'sitepoint' ),
+		'id'            => 'footer-3',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer 4', 'sitepoint' ),
+		'id'            => 'footer-4',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'sitepoint' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'sitepoint_widgets_init' );
 ```
+
+Doing the code above gives us widget areas that we can drag and drop content from WordPress. See image below:
+
+![Widget Area](img/widgets.png)
+
+Now to call a widget inside our theme we would just drop this code wherever we want our widget to show up. We would do the same for the footer areas but replace `sidebar-1` for `footer-1`.
+
+```
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+	<aside id="secondary" class="widget-area" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</aside>
+<?php endif; ?>
+```
+
