@@ -1,9 +1,15 @@
-# Set the permalinks
+# Next Steps
 
-On the initial install you will see that when we visit a post and a page the url up at the top will look like `somedomain.com/?p=234`. Although this may be acceptable for you, it would probably be best to have something that is easy to remember and something that helps a little with SEO (Search Engine Optimization).
+You should have a basic understanding of how you can easily implement a template into your WordPress site. Below are some next step items to be on the lookout for.
 
-## Pretty URLS
+## Custom fields
 
-Pretty urls are easy to remember, describe the page a little better and are easy to implement. A pretty url for a blog titled `7 Reasons to Learn WordPress` is changed in our system to `7-reasons-to-learn-wordpress`. But we have to tell WordPress this is what we want. In the admin areay you need to go to `Settings > Permalinks` and you will see a list of available options. The option we are going to choose for this project is going to be `Post name`.
+On our home page you see there are some content areas that are broken up by html. We could use a great plugin called `Advanced Custom Fields` and easily add fields to the dashboard that can take place of these content areas. Whenever you develop a WordPress site be sure to put the thought process of giving every available option for content to be updated in the admin area. This makes it easier for end users.
 
-After that selection all your pages and posts will have pretty urls. So instead of having an about page say `?p=234` it will now say `somedomain.com/about`. You can even change this urls called `slugs` when you are editing that page or post.
+## Exploring more functions
+
+Don't forget to browse through the [WordPress Function Reference](https://codex.wordpress.org/Function_Reference). It is loaded with a great number of functions that you could use in your theme development.
+
+## Asset pipeline
+
+Another thing that is worth noting is creating or using an asset pipeline as a great starting point for your project. An asset pipeline helps with javascript and css management and compiling. You could introduce sass for css and possibly have gulp or webpack run it for you. This would be a great option and give you a headstart for every project.
