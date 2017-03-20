@@ -255,17 +255,6 @@ function sitepoint_content_width() {
 }
 add_action( 'template_redirect', 'sitepoint_content_width', 0 );
 
-function register_my_menu() {
-  	register_nav_menu(
-  		array(
-  			'header-menu',__( 'Header Menu' ),
-  			'side-menu',__( 'Side Menu' ),
-  			'footer-menu',__( 'Footer Menu' )
-  		)
-	);
-}
-add_action( 'init', 'register_my_menu' );
-
 /**
  * Register custom fonts.
  */
