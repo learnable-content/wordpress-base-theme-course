@@ -2,7 +2,12 @@
 
 It is very important to understand the template folder structure of WordPress so you know which files you need to interact with.
 
-The following link gives us a list reference of the available template files that we can use. This is not by all means the only files we can use but they are the core to what the template directory gives us. [Theme Development](https://codex.wordpress.org/Theme_Development)
+The following link gives us a list reference of the available template files that we can use. This is not by all means the only files we can use but they are the core to what the template directory gives us.
+
+See:
+
+- [Theme Development](https://codex.wordpress.org/Theme_Development)
+- [Template Files](https://developer.wordpress.org/themes/basics/template-files)
 
 ## List of main files
 
