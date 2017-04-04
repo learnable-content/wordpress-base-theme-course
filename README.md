@@ -1,6 +1,6 @@
 # Custom Post Type Templates
 
-Custom post types are a way for you to interact and build out the administration area. When you create a custom post each custom post type will have it's own sets of theme files that are available to us.
+Post types are the life line of WordPress. Everythign in the database that exists is a post type. A blog is a "post" post type. A page is a "page" post type. Images are considered "attachment" post types. The cool thing about WordPress is that we can create our own custom post types that are associated with any section we would need to separate in our websites. When you create a custom post each custom post type will have it's own set of theme files that are available to us. We we also be adding a separate area in the admin area to manage this post type.
 
 ## archive-custom_post_type_name.php
 
