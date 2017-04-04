@@ -4,7 +4,10 @@ WordPress is built in a way that determines which of the files in the previous l
 
 In WordPress you have blogs, those blogs have single urls, you may even have a list of blogs that are in the past and archived. Then you have content pages, the front page of the website, the front page of the blog. The list can go on and on. Depending on which page you hit and what type of page it is, WordPress chooses which file will actually load to display that content.
 
-[See Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy)
+See:
+
+- [Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy)
+- [Interactive Hierarchy](https://wphierarchy.com)
 
 In the link above you can see what files get loaded and in what order. The way to get a good handle on how this works is to see this image:
 
