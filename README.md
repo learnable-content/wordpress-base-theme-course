@@ -1,4 +1,4 @@
-# wp\_enqueue\_script()
+# wp\_enqueue_script()
 
 Normally we are use to just adding our script files (javscript) wherever we need to either in the top or bottom of our html files. WordPress gives us a way to add them to our templates right inside of the `functions.php` file and then uses either the `wp_head()` or `wp_footer()` to add them to the template.
 
@@ -36,7 +36,7 @@ A boolean that we pass to tell WordPress to put it in the footer (if true) or pl
 
 ```
 function load_scripts() {
-		wp_enqueue_script( 'myLabel', '/url/to/scriptFile.js' ), array('jquery'), '1.0.0', true );
+		wp_enqueue_script( 'myLabel', '/url/to/scriptFile.js', array('jquery'), '1.0.0', true );
 
 }
 ```
@@ -45,7 +45,7 @@ Having this function alone won't do what what need. We need to use another hook 
 
 ```
 function load_scripts() {
-		wp_enqueue_script( 'myLable', '/url/to/scriptFile.js' ), array('jquery'), '1.0.0', true );
+		wp_enqueue_script( 'myLabel', '/url/to/scriptFile.js', array('jquery'), '1.0.0', true );
 
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
