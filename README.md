@@ -1,4 +1,4 @@
-# wp\_enqueue\_style()
+# wp\_enqueue_style()
 
 Just like `wp_enqueue_script()` the `wp_enqueue_style()` works the same however it is only for loading css style sheets. The function for the most part looks the same with some key differences.
 
@@ -36,7 +36,7 @@ Whether this file needs to be loaded for all media types. All, print or screen.
 
 ```
 function load_scripts() {
-		wp_enqueue_script( 'myLabel', '/url/to/scriptFile.js' ), array('jquery'), '1.0.0', true );
+		wp_enqueue_script( 'myLabel', '/url/to/scriptFile.js', array('jquery'), '1.0.0', true );
 		wp_enqueue_style( 'myCssLabel', '/url/to/cssFile.css', array(), '1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
