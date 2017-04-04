@@ -1,4 +1,4 @@
-# wp\_nav_\menu()
+# wp\_nav_menu()
 
 `wp_nav_menu()` is a helper function that WordPress provides for us to be able to call any navigation from our administration area. There are many options that this helper function gives us. From which navigation to pull down to what html wraps around the navigation menu.
 
@@ -18,7 +18,7 @@ Where `Header Menu` is used as the label for the admin area. You could have mult
 
 ```
 function register_my_menu() {
-    register_nav_menu(
+    register_nav_menus(
         array(
             'header-menu',__( 'Header Menu' ),
             'side-menu',__( 'Side Menu' ),
