@@ -18,7 +18,7 @@ function helloWorld() {
 Go to any of your template files I will go to the `index.php` and add it anywhere there to call.
 
 ```
-<?php helloWordl(); ?>
+<?php helloWord(); ?>
 ```
 
 When we visit the page you can see that the function was called and indeed puts our string to the screen.
