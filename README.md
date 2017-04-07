@@ -17,3 +17,7 @@ You would normally have a full look to your site that would have a top section, 
 ## Theme Functions
 
 Inside these theme sections we will have functions that we call for various needs. For example we will have a function call that will query for the content that is inside that particular page. Or maybe we will have a function call that call the navigation of the site. Either way we have a ton of functions at our disposal.
+
+## Child themes
+
+Child themes are a way to extend the may parent theme without altering any of it's core code. Think of it like we are overriding the parent templating code with any additional changes we want. Sometimes you want to do this if you have a purchased theme so as not to edit the core code. Then when the theme has any upgrades it will not overwrite your code. We will not be getting into those during this course but you can read more about it here  [Child Themes](https://developer.wordpress.org/themes/advanced-topics/child-themes/)
