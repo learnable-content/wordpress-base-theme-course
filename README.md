@@ -1,6 +1,6 @@
-# get\_template\_directory_uri()
+# get\_theme\_file_uri()
 
-Another helpful function to use is `get_template_directory_uri()`. This function gives us the theme directory path. This is a very useful for many reasons when it comes to including assets, images or even urls.
+Another helpful function to use is `get_theme_file_uri()`. This function gives us the theme directory path. This is a very useful for many reasons when it comes to including assets, images or even urls.
 
 ## Asset examples
 
