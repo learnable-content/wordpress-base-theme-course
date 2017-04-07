@@ -21,3 +21,7 @@ Inside these theme sections we will have functions that we call for various need
 ## Child themes
 
 Child themes are a way to extend the may parent theme without altering any of it's core code. Think of it like we are overriding the parent templating code with any additional changes we want. Sometimes you want to do this if you have a purchased theme so as not to edit the core code. Then when the theme has any upgrades it will not overwrite your code. We will not be getting into those during this course but you can read more about it here  [Child Themes](https://developer.wordpress.org/themes/advanced-topics/child-themes/)
+
+## Filters and Hooks
+
+Through the course we will be dealing mostly with hooks in certain areas where we need them. WordPress gives us area in the load time of the files that we can hook into and interject our code that we need to. Filters are a way to alter the data that comes out of WordPress think of pulling out the content and adding a url at the end of the content for all blog posts. We can "filter" through them and alter the output.
