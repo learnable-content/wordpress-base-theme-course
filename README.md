@@ -456,3 +456,86 @@ function sitepoint_css() {
 }
 add_action( 'wp_enqueue_scripts', 'sitepoint_css' );
 ```
+
+## Custom Logo
+
+We can give the user the ability to upload their own logo for the top portion of the website. We do so with by enabling it in our `functions.php` file by adding the theme support below.
+
+```
+add_theme_support( 'custom-logo' );
+```
+
+After that we can configure how the logo will be uploaded and what sizes are allowed. On upload it will give the user the ability to crop it.
+
+```
+function themename_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+```
+The height and width are pretty self explanatory but the flex-height just means we want our logo to have a flexible height.
+
+To dispaly our logo on our theme we would just put this in our header.
+
+```
+if ( function_exists( 'the_custom_logo' ) ) {
+    the_custom_logo();
+}
+```
+
+## Custom Headers
+
+We can also allow the user to add a custom header to the page. We can add the following to our `functions.php` file.
+
+```
+add_theme_support( 'custom-header' );
+```
+
+```
+function themename_custom_header_setup() {
+    $defaults = array(
+        // Default Header Image to display
+        'default-image'         => get_template_directory_uri() . '/images/headers/default.jpg',
+        // Display the header text along with the image
+        'header-text'           => false,
+        // Header text color default
+        'default-text-color'        => '000',
+        // Header image width (in pixels)
+        'width'             => 1000,
+        // Header image height (in pixels)
+        'height'            => 198,
+        // Header image random rotation default
+        'random-default'        => false,
+        // Enable upload of image file in admin 
+        'uploads'       => false,
+        // function to be called in theme head section
+        'wp-head-callback'      => 'wphead_cb',
+        //  function to be called in preview page head section
+        'admin-head-callback'       => 'adminhead_cb',
+        // function to produce preview markup in the admin screen
+        'admin-preview-callback'    => 'adminpreview_cb',
+        );
+}
+add_action( 'after_setup_theme', 'themename_custom_header_setup' );
+```
+
+We don't need all these parameters but these are what we are able to pass to the function to setup the custom header. Then in our header file we could put the following:
+
+```
+<?php if ( get_header_image() ) : ?>
+    <div id="site-header">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+            <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+        </a>
+    </div>
+<?php endif; ?>
+```
+
+This will load what the user has uploaded for a customer header.
