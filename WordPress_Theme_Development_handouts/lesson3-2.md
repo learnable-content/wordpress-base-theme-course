@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/3.2.png)
+![](headings/3.2.png)
 
 # wp\_head() and wp\_footer()
 
