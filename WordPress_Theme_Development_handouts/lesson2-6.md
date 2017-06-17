@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/2.6.png)
+![](headings/2.6.png)
 
 # Front Page Template
 
