@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/3.1.png)
+![](headings/3.1.png)
 
 # Functions.php and use cases
 
