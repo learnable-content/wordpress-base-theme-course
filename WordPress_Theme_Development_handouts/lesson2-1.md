@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/2.1.png)
+![](headings/2.1.png)
 
 # WordPress Template Hierarchy
 
