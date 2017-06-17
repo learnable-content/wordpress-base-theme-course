@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/2.7.png)
+![](headings/2.7.png)
 
 # The 404 Page
 
