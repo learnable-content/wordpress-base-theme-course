@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/3.4.png)
+![](headings/3.4.png)
 
 # wp\_enqueue_style()
 
