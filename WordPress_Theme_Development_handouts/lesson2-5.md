@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/2.5.png)
+![](headings/2.5.png)
 
 # Custom Post Type Templates
 
