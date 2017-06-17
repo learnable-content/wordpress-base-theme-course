@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/1.3.png)
+![](headings/1.3.png)
 
 # WordPress Template Structure
 
