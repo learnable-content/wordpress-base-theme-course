@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/1.2.png)
+![](headings/1.2.png)
 
 # What is WordPress Theming
 
