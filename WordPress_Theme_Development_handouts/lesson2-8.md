@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/2.8.png)
+![](headings/2.8.png)
 
 Sometimes we may need a template that does not follow the natural order of the template hierarchy.
 
