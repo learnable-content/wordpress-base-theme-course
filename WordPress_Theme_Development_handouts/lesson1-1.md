@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/1.1.png)
+![](headings/1.1.png)
 
 Hello guys, welcome to SitePoint's **WordPress Theme Creation** course!
 
