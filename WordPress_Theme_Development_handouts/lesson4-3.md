@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/4.3.png)
+![](headings/4.3.png)
 
 # Creating the Footer and get_footer
 
