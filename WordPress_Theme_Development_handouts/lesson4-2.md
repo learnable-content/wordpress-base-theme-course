@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/4.2.png)
+![](headings/4.2.png)
 
 # Creating the Sidebar and get_sidebar
 
