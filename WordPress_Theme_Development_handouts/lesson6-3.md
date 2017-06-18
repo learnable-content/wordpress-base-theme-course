@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/6.3.png)
+![](headings/6.3.png)
 
 # Create your own custom post type
 
