@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/4.1.png)
+![](headings/4.1.png)
 
 # Creating the Header and get_header
 
