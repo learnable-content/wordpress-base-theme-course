@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/5.4.png)
+![](headings/5.4.png)
 
 # Move the navigation to a partial view
 
