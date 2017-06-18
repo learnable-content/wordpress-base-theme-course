@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/3.8.png)
+![](headings/3.8.png)
 
 # Post Related Template Tags
 
