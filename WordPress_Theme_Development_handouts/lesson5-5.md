@@ -1,4 +1,4 @@
-![](headings/5.5.png)
+![](WordPress_Theme_Development_handouts/headings/5.5.png)
 
 # Pulling it all together
 
