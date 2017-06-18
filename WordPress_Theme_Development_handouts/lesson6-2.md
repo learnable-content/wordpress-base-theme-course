@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/6.2.png)
+![](headings/6.2.png)
 
 # Create your menu areas
 
