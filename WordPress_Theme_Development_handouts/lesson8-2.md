@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/8.2.png)
+![](headings/8.2.png)
 
 # Conclusion
 
