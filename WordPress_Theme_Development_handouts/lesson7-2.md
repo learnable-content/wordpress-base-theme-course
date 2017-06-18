@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/7.2.png)
+![](headings/7.2.png)
 
 # Set the permalinks
 
