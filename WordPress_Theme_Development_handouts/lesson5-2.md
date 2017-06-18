@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/5.2.png)
+![](headings/5.2.png)
 
 # Slicing up the footer
 
