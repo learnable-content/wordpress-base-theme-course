@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/5.1.png)
+![](headings/5.1.png)
 
 # Slicing up the header
 
