@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/7.1.png)
+![](headings/7.1.png)
 
 # Set the home page
 
