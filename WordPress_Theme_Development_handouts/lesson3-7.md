@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/3.7.png)
+![](headings/3.7.png)
 
 # wp\_nav_menu()
 
