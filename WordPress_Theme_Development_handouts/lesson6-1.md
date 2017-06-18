@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/6.1.png)
+![](headings/6.1.png)
 
 # Build your own widgets
 
