@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/3.6.png)
+![](headings/3.6.png)
 
 # get\_theme\_file_uri()
 
