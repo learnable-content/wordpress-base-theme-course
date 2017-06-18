@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/3.5.png)
+![](headings/3.5.png)
 
 # get\_template\_part()
 
