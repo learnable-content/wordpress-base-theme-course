@@ -1,4 +1,4 @@
-![](WordPress_Theme_Development_handouts/headings/5.3.png)
+![](headings/5.3.png)
 
 # Slice up the sidebar if need be
 
